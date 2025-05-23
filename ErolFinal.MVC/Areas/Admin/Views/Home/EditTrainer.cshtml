@@ -1,0 +1,50 @@
+﻿@model TrainerModel
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Edit an existing trainer (#@Model.Id | @Model.Name)</h1>
+    <div class="card mb-4">
+        <div class="card-body">
+            <form asp-area="Admin" asp-controller="Home" asp-action="EditTrainer" method="post" enctype="multipart/form-data">
+                <input asp-for="Id" type="hidden" />
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputName" asp-for="Name" />
+                    <label for="inputName">Name</label>
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputCategory" asp-for="Category" />
+                    <label for="inputCategory">Category</label>
+                    <span asp-validation-for="Category"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputDescription" asp-for="Description" />
+                    <label for="inputDescription">Description</label>
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputFacebookUrl" asp-for="FacebookUrl" />
+                    <label for="inputFacebookUrl">Facebook URL</label>
+                    <span asp-validation-for="FacebookUrl"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputTwitterUrl" asp-for="TwitterUrl" />
+                    <label for="inputTwitterUrl">Twitter URL</label>
+                    <span asp-validation-for="TwitterUrl"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputBehanceUrl" asp-for="BehanceUrl" />
+                    <label for="inputBehanceUrl">Behance URL</label>
+                    <span asp-validation-for="BehanceUrl"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="inputImg" name="Img" type="file" />
+                    <label for="inputImg">Trainer image</label>
+                </div>
+                <div asp-validation-summary="All"></div>
+                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <button class="btn btn-primary" type="submit">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
